@@ -1,5 +1,6 @@
 import { Grid } from '@/components/products/Grid'
 import { Popover, Transition } from '@headlessui/react'
+import { ApplicationGuidesGrid } from '../application-guides/applicaton-guides-grid'
 
 export function SwitcherPopover({ children, menuItem, ...props }) {
   console.log('menuItem', menuItem)
@@ -17,14 +18,16 @@ export function SwitcherPopover({ children, menuItem, ...props }) {
       <Popover.Panel className="absolute z-10 m-auto mt-4 ">
         {({ close }) => (
           <div className="fixed left-0 w-full">
-            <div
-              className="m-auto w-full max-w-[600px]  overflow-hidden  rounded-lg bg-white p-4 shadow-xl ring-1 ring-black ring-opacity-5 dark:border dark:border-slate-600 dark:bg-neutral-900"
-            >
-              <Grid
-                className="relative md:grid-flow-row md:grid-cols-2"
-                onClick={close}
-                menuItem={menuItem}
-              />
+            <div className="m-auto w-full max-w-[600px]  overflow-hidden  rounded-lg bg-white p-4 shadow-xl ring-1 ring-black ring-opacity-5 dark:border dark:border-slate-600 dark:bg-neutral-900">
+              {menuItem === 'I want to... ⬇️' ? (
+                <ApplicationGuidesGrid menuItem={menuItem} onClick={close} />
+              ) : (
+                <Grid
+                  className="relative md:grid-flow-row md:grid-cols-2"
+                  onClick={close}
+                  menuItem={menuItem}
+                />
+              )}
             </div>
           </div>
         )}

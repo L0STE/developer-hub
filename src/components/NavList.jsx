@@ -1,10 +1,8 @@
 import { Popover } from '@headlessui/react'
 import { useState } from 'react'
-import { Logo, LogoWithName } from './products/Logo'
-import { SwitcherDialog } from './products/SwitcherDialog'
 import { SwitcherPopover } from './products/SwitcherPopover'
 
-const menuItems = ['Create', 'Commerce', 'Utility', 'Dev Tools']
+const menuItems = ['I want to... ⬇️','Create', 'Commerce', 'Utility', 'Dev Tools']
 
 const NavList = () => {
 
